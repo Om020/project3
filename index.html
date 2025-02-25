@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVR Sports Collection</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+        }
+
+        .hero {
+            background-image: url('hero-image.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .products, .mens-products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .product img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .product h3 {
+            margin: 15px;
+            font-size: 1.2em;
+        }
+
+        .product p {
+            margin: 15px;
+            color: #777;
+        }
+
+        .product:hover {
+            transform: translateY(-10px);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+        .Button{
+            background-color: rgb(245, 241, 241);
+            /* display: flex; */
+            margin-left: 100px;
+        }
+    </style>
+    <script>
+    // Hero section fade-in animation
+    window.addEventListener('load', function() {
+        const hero = document.querySelector('.hero');
+        hero.style.opacity = 1;
+        hero.style.transform = 'translateY(0)';
+    });
+
+    // Smooth scroll for navigation links
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop - 60,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+</head>
+
+<body>
+    <header>
+        <h1>AVR Sports Collection</h1>
+    </header>
+    
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section class="hero">
+        <div>Empower Your Game with Style</div>
+    </section>
+
+    <section class="products">
+        <h2 style="text-align:center;">Women's Wear</h2>
+        <div class="product">
+            <img src="https://tego.fit/cdn/shop/files/3_15b99833-9ffc-4817-bc2b-6c714f33563d_1800x1800.jpg?v=1727768541" alt="Sportswear 1">
+            <h3>Performance Leggings</h3>
+            <button class="Button">
+                Add to cart
+            </button>
+            <p>800</p>
+        </div>
+        <div class="product">
+            <img src="https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F1f%2F20%2F1f20e9ff76ad6335db7793ebd35e81d64e9b3c10.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]" alt="Sportswear 2">
+            <h3>Breathable Tank Top</h3>
+            <button class="Button">
+                Add to cart
+            </button>
+            <p>9000</p>
+        </div>
+        <div class="product">
+            <img src="https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F5d%2F77%2F5d77d99900f228782c99d07eec947c229c62eada.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]" alt="Sportswear 3">
+            <h3>Running Jacket</h3>
+            <button class="Button">
+                Add to cart
+            </button>
+            <p>2999</p>
+        </div>
+    </section>
+
+    <section class="mens-products">
+        <h2 style="text-align:center;">Men's Wear</h2>
+        <div class="product">
+            <img src="https://www.triumph-sports.com/wp-content/uploads/2024/04/RunJerChMeStyA07-1.jpg" alt="Mens Sportswear 1">
+            <h3>Compression Shirt</h3>
+            <button class="Button">
+                Add to cart
+            </button>
+            <p>1500</p>
+        </div>
+        <div class="product">
+            <img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/524929/01/fnd/IND/fmt/png/PUMA-FIT-7"-Men's-Training-Shorts" alt="Mens Sportswear 2">
+            
+            <div>
+                <h3>Training Shorts</h3>
+                <button class="Button">
+                    Add to cart
+                </button>
+            </div>
+            <p>$34.99</p>
+        </div>
+        <div class="product">
+            <img src="data:image/jpeg;base64,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" alt="Mens Sportswear 3">
+            <h3>Windbreaker Jacket</h3>
+            <button class="Button">
+                Add to cart
+            </button>
+            <p>$59.99</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 AVR Sports Collection. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
